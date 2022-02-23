@@ -114,6 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c36b4fdb3c29b341aea23d6f5372369, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerController: {fileID: 3413071467974263808}
 --- !u!1 &107684
 GameObject:
   m_ObjectHideFlags: 0
@@ -5000,3 +5001,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e29dd08ae11f4d4bbdb12c9a2bd75c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveDistance: 1
+  moveTime: 0.4
+  colliderDistance: 1
+  isIdle: 1
+  isDead: 0
+  isMoving: 0
+  isJumping: 0
+  jumpStart: 0
+  particle: {fileID: 19850840}
+  chick: {fileID: 106224}
