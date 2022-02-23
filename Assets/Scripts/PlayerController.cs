@@ -140,7 +140,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void GotHit()
+    public void GotHit()
     {
         isDead = true;
 

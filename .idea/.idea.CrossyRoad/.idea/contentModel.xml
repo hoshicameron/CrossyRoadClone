@@ -6,6 +6,7 @@
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="AnimatorController.cs" t="Include" />
+          <e p="Mover.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
           <e p="Plugin" t="Include">
             <e p="LeanTween.cs" t="Include" />
