@@ -141,6 +141,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0
   moveDirection: 0
-  parentOnTrigger: 1
-  hitBoxOnTrigger: 0
+  parentOnTrigger: 0
+  hitBoxOnTrigger: 1
   moverObject: {fileID: 107598}
