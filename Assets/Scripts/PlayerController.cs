@@ -33,8 +33,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-
-        //Todo can play
+        if(!GameManager.Instance.CanPlay)    return;
 
         if(isDead)    return;
 
@@ -122,7 +121,7 @@ public class PlayerController : MonoBehaviour
 
     private void SetMoveForwardState()
     {
-
+        GameManager.Instance.UpdateDistanceCount();
     }
 
     private void IsVisible()
@@ -143,6 +142,8 @@ public class PlayerController : MonoBehaviour
     public void GotHit()
     {
         isDead = true;
+
+        GameManager.Instance.GameOver();
 
         var emission = particle.emission;
         emission.enabled = true;

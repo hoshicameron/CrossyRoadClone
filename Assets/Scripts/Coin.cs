@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
-    [SerializeField] private int coinValue;
+    [SerializeField] private int coinValue = 1;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -16,7 +16,7 @@ public class Coin : MonoBehaviour
 
             // Todo recycle coin with pool
 
-            // Todo update game manager
+            GameManager.Instance.UpdateCoinCount(coinValue);
 
             Destroy(gameObject);
         }

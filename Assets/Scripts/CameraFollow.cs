@@ -14,7 +14,7 @@ public class CameraFollow : MonoBehaviour
 
     private void LateUpdate()
     {
-        // Todo GameManager => Can Play
+        if (!GameManager.Instance.CanPlay) return;
 
         if (autoMove)
         {
