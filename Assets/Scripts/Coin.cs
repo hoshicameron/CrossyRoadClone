@@ -12,8 +12,6 @@ public class Coin : MonoBehaviour
         {
             print("Coin Collected");
 
-
-
             // Todo recycle coin with pool
 
             GameManager.Instance.UpdateCoinCount(coinValue);

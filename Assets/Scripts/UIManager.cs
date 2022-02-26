@@ -32,6 +32,11 @@ public class UIManager : SingletonMonoBehaviour<UIManager>
         gameOverUI.SetActive(true);
     }
 
+    public void StartPlay()
+    {
+        GameManager.Instance.StartPlay();
+
+    }
 
     public void PlayAgain()
     {

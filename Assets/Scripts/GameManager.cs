@@ -19,7 +19,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     public void UpdateCoinCount(int value)
     {
         currentCoins += value;
-        UIManager.Instance.UpdateCoinText(value.ToString());
+        UIManager.Instance.UpdateCoinText(currentCoins.ToString());
     }
 
     public void UpdateDistanceCount()
@@ -40,6 +40,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
 
     public void StartPlay()
     {
+        print("Start Play");
         CanPlay = true;
     }
 

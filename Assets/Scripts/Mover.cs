@@ -13,6 +13,12 @@ public class Mover : MonoBehaviour
     private Renderer renderer=null;
     private bool isVisible = false;
 
+    public float Speed
+    {
+        get => speed;
+        set => speed = value;
+    }
+
     private void Start()
     {
         renderer = moverObject.GetComponent<Renderer>();
@@ -20,7 +26,7 @@ public class Mover : MonoBehaviour
 
     private void Update()
     {
-        transform.Translate(    Vector3.right * speed * moveDirection * Time.deltaTime);
+        transform.Translate(    Vector3.right * speed  * Time.deltaTime);
 
         IsVisible();
     }

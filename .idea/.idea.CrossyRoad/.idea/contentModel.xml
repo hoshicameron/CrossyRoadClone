@@ -16,6 +16,8 @@
             <e p="LeanTween.cs" t="Include" />
           </e>
           <e p="SingletonMonobehaviour.cs" t="Include" />
+          <e p="SpawnController.cs" t="Include" />
+          <e p="Spawner.cs" t="Include" />
           <e p="UIManager.cs" t="Include" />
         </e>
         <e p="TextMesh Pro" t="Include">
