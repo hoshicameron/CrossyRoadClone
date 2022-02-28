@@ -37,8 +37,7 @@ public class Mover : MonoBehaviour
 
         if (!renderer.isVisible && isVisible)
         {
-            print("Mover off screen");
-            // Todo use pool system and disable gameobject for reuse it again
+            Destroy(gameObject);
         }
     }
 

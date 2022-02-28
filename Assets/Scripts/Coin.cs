@@ -10,8 +10,6 @@ public class Coin : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            print("Coin Collected");
-
             // Todo recycle coin with pool
 
             GameManager.Instance.UpdateCoinCount(coinValue);

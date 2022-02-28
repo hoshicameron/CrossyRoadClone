@@ -17,12 +17,10 @@ public class SpawnController : MonoBehaviour
         int direction = Random.Range(0, 2);
         if (direction > 0)
         {
-            print("1");
             goLeft = false;
             goRight = true;
         } else
         {
-            print("2");
             goLeft = true;
             goRight = false;
         }
@@ -40,7 +38,7 @@ public class SpawnController : MonoBehaviour
             SpawnersRight[i].item = item;
             SpawnersRight[i].goLeft = goLeft;
             SpawnersRight[i].gameObject.SetActive(goLeft);
-            SpawnersRight[i].spawnLeftPosition = SpawnersRight[i].transform.position.x;
+            SpawnersRight[i].spawnRightPosition = SpawnersRight[i].transform.position.x;
         }
     }
 }

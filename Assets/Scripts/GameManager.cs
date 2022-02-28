@@ -5,6 +5,8 @@ using UnityEngine;
 public class GameManager : SingletonMonoBehaviour<GameManager>
 {
     [SerializeField] private GameObject camera = null;
+    [SerializeField] private int levelCount = 50;
+    [SerializeField] private LevelGenerator levelGenerator;
 
     public bool CanPlay { get; private set; } = false;
 
@@ -13,7 +15,10 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
 
     private void Start()
     {
-        // Todo Level generator startup
+        for (int i = 0; i < levelCount; i++)
+        {
+            levelGenerator.RandomGenerator();
+        }
     }
 
     public void UpdateCoinCount(int value)
@@ -27,7 +32,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
         currentDistance += 1;
         UIManager.Instance.UpdateDistanceText(currentDistance.ToString());
 
-        // Todo generate new level piece here
+        levelGenerator.RandomGenerator();
     }
 
     public void GameOver()
@@ -40,7 +45,6 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
 
     public void StartPlay()
     {
-        print("Start Play");
         CanPlay = true;
     }
 
