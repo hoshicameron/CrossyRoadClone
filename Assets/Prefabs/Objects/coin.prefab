@@ -156,6 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 1
+  coinClip: {fileID: 8300000, guid: 0a55514c5eef7264bb11b07d56dcff30, type: 3}
 --- !u!1 &187180
 GameObject:
   m_ObjectHideFlags: 0

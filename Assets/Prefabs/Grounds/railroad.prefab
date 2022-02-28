@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 3374858}
   - component: {fileID: 6583406}
   - component: {fileID: 5450134}
+  - component: {fileID: 2570491935832572504}
   m_Layer: 0
   m_Name: trafficLight (1)
   m_TagString: Untagged
@@ -112,7 +113,7 @@ Transform:
   m_LocalScale: {x: 20, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 450292}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3374858
 MeshFilter:
@@ -151,6 +152,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2570491935832572504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 104372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acaa20a3b6e56a74ba1df33ff23c1472, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  light: {fileID: 176258}
 --- !u!1 &121808
 GameObject:
   m_ObjectHideFlags: 0
@@ -245,6 +259,7 @@ GameObject:
   - component: {fileID: 6532830}
   - component: {fileID: 2381732}
   - component: {fileID: 5411338}
+  - component: {fileID: 7487753971356758521}
   m_Layer: 0
   m_Name: trafficLight
   m_TagString: Untagged
@@ -344,6 +359,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &7487753971356758521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acaa20a3b6e56a74ba1df33ff23c1472, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  light: {fileID: 193030}
 --- !u!1 &124058
 GameObject:
   m_ObjectHideFlags: 0
@@ -437,7 +465,7 @@ GameObject:
   - component: {fileID: 6574168}
   m_Layer: 0
   m_Name: lightpole
-  m_TagString: collider
+  m_TagString: Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -454,8 +482,8 @@ Transform:
   m_LocalScale: {x: 0.006, y: 0.3, z: 0.3}
   m_Children:
   - {fileID: 406940}
-  - {fileID: 487958}
   - {fileID: 468214}
+  - {fileID: 487958}
   m_Father: {fileID: 409302}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -886,7 +914,7 @@ GameObject:
   - component: {fileID: 6586518}
   m_Layer: 0
   m_Name: lightpole
-  m_TagString: collider
+  m_TagString: Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -989,6 +1017,7 @@ GameObject:
   - component: {fileID: 6576790}
   - component: {fileID: 2343248}
   - component: {fileID: 5457420}
+  - component: {fileID: 4957031870463207904}
   m_Layer: 0
   m_Name: trafficLight (1)
   m_TagString: Untagged
@@ -1008,7 +1037,7 @@ Transform:
   m_LocalScale: {x: 20, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 409094}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3377750
 MeshFilter:
@@ -1088,6 +1117,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &4957031870463207904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 164764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acaa20a3b6e56a74ba1df33ff23c1472, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  light: {fileID: 184264}
 --- !u!1 &170558
 GameObject:
   m_ObjectHideFlags: 0
@@ -1198,7 +1240,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 450292}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &10890320
 Light:
@@ -1274,7 +1316,7 @@ GameObject:
   - component: {fileID: 6529238}
   m_Layer: 0
   m_Name: lightpole
-  m_TagString: collider
+  m_TagString: Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1291,8 +1333,8 @@ Transform:
   m_LocalScale: {x: 0.006, y: 0.3, z: 0.3}
   m_Children:
   - {fileID: 458674}
-  - {fileID: 421690}
   - {fileID: 438118}
+  - {fileID: 421690}
   m_Father: {fileID: 409302}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1338,7 +1380,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 409094}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &10807846
 Light:

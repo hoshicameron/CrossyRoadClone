@@ -81,8 +81,10 @@ public class Spawner : MonoBehaviour
     {
         if (useSpawnPlacement)
         {
-            return new Vector3(Random.Range(spawnLeftPosition,spawnCountMax),startPosition.position.y,
+            Vector3 position= new Vector3((int)Random.Range(spawnLeftPosition,spawnCountMax),startPosition.position.y,
                 startPosition.position.z);
+
+            return position;
         } else
         {
             return startPosition.position;

@@ -45,7 +45,11 @@ public class Mover : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            if (parentOnTrigger)     other.transform.parent = transform;
+            if (parentOnTrigger)
+            {
+                other.transform.parent = transform;
+                other.GetComponent<PlayerController>().ParentedToObject = true;
+            }
             if(hitBoxOnTrigger)      other.gameObject.GetComponent<PlayerController>().GotHit();
         }
     }
@@ -54,7 +58,11 @@ public class Mover : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            if (parentOnTrigger)     other.transform.parent = null;
+            if (parentOnTrigger)
+            {
+                other.transform.parent = null;
+                other.GetComponent<PlayerController>().ParentedToObject = false;
+            }
         }
     }
 }

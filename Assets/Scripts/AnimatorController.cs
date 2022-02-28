@@ -18,17 +18,7 @@ public class AnimatorController : MonoBehaviour
     void Update()
     {
         SetAnimation();
-        SetRotation();
-    }
 
-    private void SetRotation()
-    {
-        if (!playerController.IsIdle || playerController.IsDead)    return;
-
-        if(Input.GetKeyDown(KeyCode.UpArrow))    transform.rotation=Quaternion.Euler(270,0,0);
-        if(Input.GetKeyDown(KeyCode.DownArrow))    transform.rotation=Quaternion.Euler(270,180,0);
-        if(Input.GetKeyDown(KeyCode.RightArrow))    transform.rotation=Quaternion.Euler(270,90,0);
-        if(Input.GetKeyDown(KeyCode.LeftArrow))    transform.rotation=Quaternion.Euler(270,-90,0);
     }
 
     private void SetAnimation()

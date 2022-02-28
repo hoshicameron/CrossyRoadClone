@@ -13,22 +13,39 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private bool isMoving = false;
     [SerializeField] private bool isJumping = false;
     [SerializeField] private bool jumpStart = false;
+    [SerializeField] private bool parentedToObject = false;
+
+    [Header("Audio")]
+    [SerializeField] private AudioClip[] idleAudioClips;
+    [SerializeField] private AudioClip hopAudioClip;
+    [SerializeField] private AudioClip hitAudioClip;
+    [SerializeField] private AudioClip splashAudioClip;
+
 
     public bool IsDead => isDead;
     public bool IsJumping => isJumping;
     public bool JumpStart => jumpStart;
     public bool IsIdle => isIdle;
 
+    public bool ParentedToObject
+    {
+        get => parentedToObject;
+        set => parentedToObject = value;
+    }
 
-    [SerializeField] private ParticleSystem particle = null;
+
+    [SerializeField] private ParticleSystem deathParticle = null;
+    [SerializeField] private ParticleSystem splashParticle = null;
     [SerializeField] private GameObject chick = null;
 
     private Renderer renderer = null;
     private bool isVisible = false;
+    private AudioSource audioSource;
 
     private void Start()
     {
         renderer = chick.GetComponent<Renderer>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -47,12 +64,24 @@ public class PlayerController : MonoBehaviour
     {
         if (isIdle)
         {
-            if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow) ||
-                Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.LeftArrow))
-            {
-                CheckIfCanMove();
-            }
+            SetRotation();
         }
+    }
+    private void SetRotation()
+    {
+        if(Input.GetKeyDown(KeyCode.UpArrow))        CheckIfIdle(270,0,0);
+        if(Input.GetKeyDown(KeyCode.DownArrow))      CheckIfIdle(270,180,0);
+        if(Input.GetKeyDown(KeyCode.RightArrow))     CheckIfIdle(270,90,0);
+        if(Input.GetKeyDown(KeyCode.LeftArrow))      CheckIfIdle(270,-90,0);
+    }
+
+    private void CheckIfIdle(float x, float y, float z)
+    {
+        chick.transform.rotation=Quaternion.Euler(x,y,z);
+
+        CheckIfCanMove();
+
+        PlayAudioClip(idleAudioClips[Random.Range(0,idleAudioClips.Length)]);
     }
 
     private void CheckIfCanMove()
@@ -109,6 +138,9 @@ public class PlayerController : MonoBehaviour
         isJumping = true;
         jumpStart = false;
 
+        // Play jump audio clip
+        PlayAudioClip(hopAudioClip);
+
         // Move player and after its done call MoveComplete methode
         LeanTween.move(gameObject, position, moveTime).setOnComplete(MoveComplete);
     }
@@ -117,6 +149,8 @@ public class PlayerController : MonoBehaviour
     {
         isJumping = false;
         isIdle = true;
+
+        PlayAudioClip(idleAudioClips[Random.Range(0,idleAudioClips.Length)]);
     }
 
     private void SetMoveForwardState()
@@ -145,9 +179,32 @@ public class PlayerController : MonoBehaviour
 
         GameManager.Instance.GameOver();
 
-        var emission = particle.emission;
+        PlayAudioClip(hitAudioClip);
+
+        var emission = deathParticle.emission;
         emission.enabled = true;
     }
+
+    public void GotSoaked()
+    {
+        isDead = true;
+
+        GameManager.Instance.GameOver();
+
+        PlayAudioClip(splashAudioClip);
+
+        chick.SetActive(false);
+
+        var emission = splashParticle.emission;
+        emission.enabled = true;
+    }
+
+    private void PlayAudioClip(AudioClip clip)
+    {
+        audioSource.clip = clip;
+        audioSource.Play();
+    }
+
 
 
 }
